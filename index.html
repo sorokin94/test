@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="sign">
+        <div class="si">Sign in</div>
+        <div class="su">Sing up</div>
+    </div>
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="tabs">
+                <div class="tab active" data-tab="tab-1">Sign in</div>
+                <div class="tab" data-tab="tab-2">New account</div>
+            </div>
+            <form id="tab-1" class="tab-content active" action="">
+                <div class="input">
+                    <input type="text" placeholder="Email" id="log_email">
+                    <span>Incorrect email</span>
+                </div>
+                <div class="input">
+                    <input type="password" placeholder="Password" class="password" id="log_pass">
+                    <span>Incorrect password</span>
+                    <div class="hide-pass">
+                        Show
+                    </div>
+                </div>
+                <div class="input-checkbox">
+                    <label for="chb1">
+                        <input id="chb1" type="checkbox">Remember me</label>
+                </div>
+                <button>Login</button>
+                <div id="forgot" class="forgot" data-tab="tab-3">
+                    Forgot your password?
+                </div>
+            </form>
+            <form id="tab-2" class="tab-content" action="">
+                <div class="input">
+                    <input type="text" placeholder="Username" id="reg_username">
+                     <span>Incorrect username</span>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="Email" id="reg_email">
+                    <span>Incorrect email</span>
+                </div>
+                <div class="input">
+                    <input type="password" placeholder="Password" class="password" id="reg_pass1">
+                      <span>Incorrect password</span>
+                    <div class="hide-pass">
+                        Show
+                    </div>
+                </div>
+                <div class="input">
+                    <input type="password" placeholder="Password" class="password" id="reg_pass2">
+                     <span>Incorrect password</span>
+                    <div class="hide-pass">
+                        Show
+                    </div>
+                </div>
+                <div class="input-checkbox">
+
+                    <label for="chb2">
+                        <input id="chb2" type="checkbox" name="terms" value="terms">I argee to the <a href="">Terms</a></label>
+                          <span>Read the terms</span>
+                </div>
+                <button>Create account</button>
+            </form>
+            <form id="forgot-pass" class="tab-content" action="">
+                <span>Lost your password? Please enter your email address. You will receive a link to create a new password</span>
+                <div class="input">
+                    <input type="text" placeholder="E-mail" id="forgot_email">
+                      <span>Incorrect email</span>
+                </div>
+                <button>Reset password</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/js.js"></script>
+</body>
+
+</html>

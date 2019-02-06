@@ -1,0 +1,276 @@
+$border_color: rgb(240, 240, 240);
+$tr0_3: 0.3s all;
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    background-color: rgb(52, 54, 56);
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: #0071d7;
+    transition: $tr0_3;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.sign {
+    display: flex;
+    align-items: flex-start;
+
+    div {
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 50px;
+        border: 1px solid #fff;
+        transition: $tr0_3;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background-color: #2f879a;
+            border-color: #2f879a;
+        }
+
+    }
+
+    .si {
+        margin-right: 15px;
+    }
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    ;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+
+    &.open {
+        display: flex;
+    }
+}
+
+.modal {
+    position: relative;
+    z-index: 9;
+    background-color: #fff;
+    width: 450px;
+
+    display: flex;
+    flex-direction: column;
+    transition: $tr0_3;
+
+    .tabs {
+        display: flex;
+
+        .tab {
+            flex-basis: 50%;
+            cursor: pointer;
+            ;
+            user-select: none;
+            ;
+            text-align: center;
+            font-family: "Open Sans", sans-serif;
+            background-color: rgb(210, 216, 216);
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(163, 169, 170);
+            transition: $tr0_3;
+
+            &.active {
+                background-color: #fff;
+                color: #333;
+            }
+        }
+    }
+
+    .tab-content {
+        display: none;
+        opacity: 0;
+        z-index: -1;
+        padding: 25px 15px;
+        width: calc(100% - 30px);
+        flex-direction: column;
+
+        &.active {
+            display: flex;
+            opacity: 1;
+            z-index: 1;
+        }
+
+        &.hide {
+            transition: none;
+            padding: 0px;
+            margin: 0px;
+
+            div,
+            button {
+                display: none;
+            }
+
+            .forgot {
+                display: block;
+            }
+        }
+
+        a {
+            font-size: 11px;
+            margin-left: 3px;
+        }
+
+        span {
+            font-size: 11px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .input {
+            width: 100%;
+            height: 35px;
+            border: 1px solid $border_color;
+            margin-bottom: 17px;
+            position: relative;
+            span{
+            	display: none;;
+            }
+
+
+            &.error {
+                border-color: red;
+                span{
+                  display: block;
+                    position: absolute;
+                    bottom: -16px;
+                    color: red;
+                    font-size: 12px;
+                    margin: 0px;
+                }
+            }
+
+            input {
+                width: 100%;
+                height: 100%;
+                outline: none;
+                border: 0px;
+                padding-left: 35px;
+            }
+
+            .hide-pass {
+                position: absolute;
+                top: 8px;
+                right: 7px;
+                cursor: pointer;
+                ;
+                user-select: none;
+                border-left: 1px solid $border_color;
+                padding-left: 7px;
+                font-size: 10px;
+                color: rgb(159, 159, 159);
+                transition: $tr0_3;
+                padding-top: 2px;
+                padding-bottom: 2px;
+
+                &:hover {
+                    color: #333;
+                }
+
+            }
+        }
+
+        .input-checkbox {
+            margin-bottom: 15px;
+            position: relative;
+             span{
+            	display: none;;
+            }
+            &.error{
+            	span{
+            	 display: block;
+                    position: absolute;
+                    bottom: -16px;
+                    color: red;
+                    font-size: 12px;
+                    margin: 0px;}
+            }
+            
+
+            label {
+                font-size: 11px;
+                user-select: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                ;
+            }
+        }
+
+        button {
+            width: 100%;
+            height: 35px;
+            border: 0px;
+            border-radius: 0px;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgb(47, 135, 154);
+            transition: $tr0_3;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+#forgot-pass{
+	input{
+		margin-bottom: 25px;
+	}
+}
+    .forgot {
+        position: absolute;
+        bottom: -30px;
+        color: #fff;
+        font-size: 11px;
+        text-decoration: underline;
+        cursor: pointer;
+
+        left: calc(50% - 50px);
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &.f-form {
+            left: calc(50% - 30px);
+        }
+    }
+}
+
+@media (max-width:695px) {
+    .modal {
+        position: absolute;
+        ;
+        top: 80px;
+        width: 80%;
+    }
+}
+
+@media (max-width:425px) {
+    .modal {
+        width: 100%;
+    }
+}
