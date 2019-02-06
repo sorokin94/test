@@ -63,11 +63,11 @@ $(document).mouseup(function(e) {
         closeModal();
     }
 });
-$(document).keydown(function(e) {
+/*$(document).keydown(function(e) {
     if (e.keyCode === 27) {
         closeModal();
     }
-});
+});*/
 // checkbox
 $('#chb2').on('click', function(){
 	if ($(this).attr('checked') == 'checked'){
