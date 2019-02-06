@@ -63,11 +63,17 @@ $(document).mouseup(function(e) {
         closeModal();
     }
 });
-/*$(document).keydown(function(e) {
+$(document).keydown(function(e) {
     if (e.keyCode === 27) {
         closeModal();
     }
-});*/
+});
+$('body').bind( "touchstart", function(e){
+       if (!$(".modal").is(e.target) &&
+        $(".modal").has(e.target).length === 0) {
+        closeModal();
+    }
+});
 // checkbox
 $('#chb2').on('click', function(){
 	if ($(this).attr('checked') == 'checked'){
